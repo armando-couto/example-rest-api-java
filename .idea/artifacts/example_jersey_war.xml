@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="example-jersey:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="etgas-novo.war">
+      <element id="artifact" artifact-name="example-jersey:war exploded" />
+    </root>
+  </artifact>
+</component>
