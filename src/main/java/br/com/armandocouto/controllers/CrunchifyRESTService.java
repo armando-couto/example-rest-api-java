@@ -13,17 +13,6 @@ import br.com.armandocouto.models.Track;
 @Path("/")
 public class CrunchifyRESTService {
 	
-	@POST
-	@Path("/post")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response student(Track track) {
-		
-		String result = "Track saved : " + track;
-		
-		// return HTTP response 200 in case of success
-		return Response.status(200).entity(result).build();
-	}
-	
 	@GET
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -31,9 +20,20 @@ public class CrunchifyRESTService {
  
 		Track track = new Track();
 		track.setTitle("Enter Sandman");
-		track.setSinger("Metallica");
+		track.setSinger("Armando");
  
 		return Response.status(200).entity(track.toString()).build();
  
+	}
+	
+	@POST
+	@Path("/post")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response student(Track track) {
+		
+		String result = "Track OK : " + track.getSinger();
+		
+		// return HTTP response 200 in case of success
+		return Response.status(200).entity(result).build();
 	}
 }
